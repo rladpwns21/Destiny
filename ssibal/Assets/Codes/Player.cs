@@ -7,11 +7,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float Hp;
     public Vector2 inputVec;
     public float speed;
     public float jumpPower;
 
     private bool canJump = false;
+    private bool isMove = false;
     private Rigidbody2D rigid;
     private SpriteRenderer spriter;
     private Animator anim;
@@ -42,6 +44,9 @@ public class Player : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
 
         rigid.velocity = new Vector2(h * speed, rigid.velocity.y);
+
+        if(h != 0) isMove = true;
+        else isMove = false;
     }
     private void _Jump()
     {
@@ -54,8 +59,8 @@ public class Player : MonoBehaviour
 
     private void _Anim()
     {
-        anim.SetFloat("Speed", inputVec.magnitude);
-
+        anim.SetBool("Move", isMove);
+        
         if (rigid.velocity.x < 0) spriter.flipX = true;
         else spriter.flipX = false;
     }
