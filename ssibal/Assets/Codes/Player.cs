@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
-using JetBrains.Rider.Unity.Editor;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Vector2 inputVec;
     public float speed;
-    public float jumpPower;
-
-    private bool canJump = false;
-    private Rigidbody2D rigid;
-    private SpriteRenderer spriter;
-    private Animator anim;
-
-    #region Unity_Function
+    Rigidbody2D rigid;
+    SpriteRenderer spriter;
+    Animator anim;
+    float jumpPower;
+    bool isJump = false;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -25,39 +20,41 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        _Jump();
-        _Move();
-        _Anim();
+        inputVec.x = Input.GetAxisRaw("Horizontal");
+        Jump();
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    void Jump()
     {
-        if (other.gameObject.tag == "Ground") canJump = true;
-    }
-    #endregion
-
-    #region Function
-    private void _Move()
-    {
-        float h = Input.GetAxis("Horizontal");
-
-        rigid.velocity = new Vector2(h * speed, rigid.velocity.y);
-    }
-    private void _Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            canJump = false;
+            if(!isJump)
+            {
+                isJump = true;
+                rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
+            }
         }
     }
 
-    private void _Anim()
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.name.Equals("Ground"))
+        {
+            isJump = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + nextVec);
+    }
+
+    void LateUpdate() 
     {
         anim.SetFloat("Speed", inputVec.magnitude);
 
-        if (rigid.velocity.x < 0) spriter.flipX = true;
-        else spriter.flipX = false;
+        if (inputVec.x != 0){
+            spriter.flipX = inputVec.x < 0;
+        }
     }
-    #endregion
+    
 }
