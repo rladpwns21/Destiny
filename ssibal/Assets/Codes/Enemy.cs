@@ -12,12 +12,15 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriter;
     private Animator anim;
 
+    private CapsuleCollider2D cscd;
+
     #region Unity_Function
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        cscd = GetComponent<CapsuleCollider2D>();
         _Think();
     }
 
@@ -79,7 +82,26 @@ public class Enemy : MonoBehaviour
         _Think();
         yield break;
         }
-        
+    }
+
+      private void _OnDie()
+    {
+        StartCoroutine(OnDie());
+        IEnumerator OnDie()
+        {
+        spriter.color = new Color(1, 1, 1, 0.4f);
+        spriter.flipY = true;
+        cscd.enabled = false;
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(5);
+        _DeActive();
+        yield break;
+        }
+    }
+
+     private void _DeActive()
+    {
+        gameObject.SetActive(false);
     }
     #endregion
 }
