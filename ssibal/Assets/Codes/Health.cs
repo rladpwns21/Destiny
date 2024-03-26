@@ -5,36 +5,35 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int health;
     public int numOfHearts;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    void Update() {
-        
-
-        if(health > numOfHearts)
+    void Update()
+    {
+        int hp = GameManager.instance.mainPlayer.Hp;
+        if (hp > numOfHearts)
         {
-            health = numOfHearts;
+            hp = numOfHearts;
         }
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if(i < health)
+            if (i < hp)
             {
                 hearts[i].sprite = fullHeart;
-            } 
-            else 
+            }
+            else
             {
                 hearts[i].sprite = emptyHeart;
             }
-            if(i < numOfHearts)
+            if (i < numOfHearts)
             {
                 hearts[i].enabled = true;
-            } 
-            else 
+            }
+            else
             {
                 hearts[i].enabled = false;
             }

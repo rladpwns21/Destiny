@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float Hp;
+    public int Hp;
     public Vector2 inputVec;
     public float speed;
     public float jumpPower;
