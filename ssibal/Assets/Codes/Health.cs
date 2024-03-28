@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public int numOfHearts;
-
-    public Image[] hearts;
+    public List<Image> hearts = new List<Image>();
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+
 
     void Update()
     {
@@ -19,7 +20,7 @@ public class Health : MonoBehaviour
             hp = numOfHearts;
         }
 
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Count; i++)
         {
             if (i < hp)
             {

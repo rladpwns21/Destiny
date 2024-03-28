@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     public int nextMove;
+
+    public int EnemyHp;
     private Rigidbody2D rigid;
     private bool isMove = false;
     private SpriteRenderer spriter;
