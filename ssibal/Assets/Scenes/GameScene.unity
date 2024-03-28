@@ -1887,6 +1887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMove: 0
+  EnemyHp: 0
 --- !u!1 &457629091
 GameObject:
   m_ObjectHideFlags: 0
@@ -32952,7 +32953,7 @@ GameObject:
   - component: {fileID: 943517843}
   - component: {fileID: 943517842}
   - component: {fileID: 943517841}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Ground2
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -34159,7 +34160,7 @@ GameObject:
   - component: {fileID: 1213284465}
   - component: {fileID: 1213284464}
   - component: {fileID: 1213284466}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
