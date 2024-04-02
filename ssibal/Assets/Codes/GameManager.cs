@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
         if(mainPlayer.Hp > 1)
         {
         other.attachedRigidbody.velocity = Vector2.zero;
-         other.transform.position = new Vector3(0, -2.8f, 0);
+         other.transform.position = new Vector3(-24, 1f, 0);
         }
-            _HpDown();
+        _HpDown();
         }
     }
     #endregion

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aac9b906cccef34479c4af17700538e4
+guid: 91cb786776a9bea44a15c6d9779501d6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Run_Frame_0
+  - name: Sword
     originalName: 
-    pivot: {x: 0.45945948, y: 0}
+    pivot: {x: 0.5, y: -0.04878049}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 37
-      height: 37
-    spriteID: 9047048fcd11e4e48933402a6be7e790
+      width: 10
+      height: 41
+    spriteID: d8385ef72ef5a45468df8c2ce6c3c4bb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,167 +141,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Run_Frame_1
-    originalName: 
-    pivot: {x: 0.45714286, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 49
-      width: 35
-      height: 38
-    spriteID: 01c08f1b76a0f334385e0817925d98da
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 49}
-  - name: Run_Frame_2
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 49
-      y: 4
-      width: 33
-      height: 37
-    spriteID: 34800e52a2ea90545807a25f7f967d86
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 49, y: 4}
-  - name: Run_Frame_3
-    originalName: 
-    pivot: {x: 0.44827586, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 86
-      y: 49
-      width: 29
-      height: 37
-    spriteID: 1da9dce9adc7fba4eb3c56baad47e30f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 86, y: 49}
-  - name: Run_Frame_4
-    originalName: 
-    pivot: {x: 0.4516129, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 47
-      y: 49
-      width: 31
-      height: 38
-    spriteID: fdb2c71710590bf468a2bf324b628f7a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 47, y: 49}
-  - name: Run_Frame_5
-    originalName: 
-    pivot: {x: 0.45454547, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 90
-      y: 4
-      width: 33
-      height: 37
-    spriteID: f99e3257868bde84eb390545f24a8cb4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 90, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1912097461
-    name: Run
+    guid: -31456551
+    name: Sword
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Run_Frame_0
+    - name: Sword
       frameIndex: 0
       cellRect:
-        x: 15
-        y: 0
-        width: 37
-        height: 37
-      spriteId: 9047048fcd11e4e48933402a6be7e790
-    - name: Run_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 16
-        y: 0
-        width: 35
-        height: 38
-      spriteId: 01c08f1b76a0f334385e0817925d98da
-    - name: Run_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 17
-        y: 0
-        width: 33
-        height: 37
-      spriteId: 34800e52a2ea90545807a25f7f967d86
-    - name: Run_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 19
-        y: 0
-        width: 29
-        height: 37
-      spriteId: 1da9dce9adc7fba4eb3c56baad47e30f
-    - name: Run_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 18
-        y: 0
-        width: 31
-        height: 38
-      spriteId: fdb2c71710590bf468a2bf324b628f7a
-    - name: Run_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 17
-        y: 0
-        width: 33
-        height: 37
-      spriteId: f99e3257868bde84eb390545f24a8cb4
+        x: 3
+        y: 2
+        width: 10
+        height: 41
+      spriteId: d8385ef72ef5a45468df8c2ce6c3c4bb
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 16, y: 49}
