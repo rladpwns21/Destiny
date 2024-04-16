@@ -14,10 +14,18 @@ public class TrackerControl : MonoBehaviour
     private SpriteRenderer spr;
 
 
+    [SerializeField][Range(1, 5)] private float apearSpeed;
+    private float color_a = 0;
+    private bool isApear = false;
+    private Color myColor;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
+
+        myColor = spr.color;
+        spr.color = new Color(myColor.r, myColor.g, myColor.b, color_a);
     }
     private void Update()
     {
@@ -38,7 +46,25 @@ public class TrackerControl : MonoBehaviour
             spr.flipX = direction.x > 0 ? false : true;
 
             Debug.Log(direction.x * traceSpeed);
+            Apear();
         }
     }
 
+    private void Apear()
+    {
+        if (!isApear)
+        {
+            isApear = true;
+            StartCoroutine(_Apear());
+        }
+    }
+    private IEnumerator _Apear()
+    {
+        while (color_a <= 1)
+        {
+            color_a += Time.deltaTime * apearSpeed;
+            spr.color = new Color(myColor.r, myColor.g, myColor.b, color_a);
+            yield return new WaitForEndOfFrame();
+        }
+    }
 }
