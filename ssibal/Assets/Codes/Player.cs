@@ -9,18 +9,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int Hp;
+    public GameObject WeaponCollider;
     public Vector2 inputVec;
+    private Rigidbody2D rigid;
+    private SpriteRenderer spriter;
+    private CapsuleCollider2D cscd;
+    private Animator anim;
+    public Transform[] WeaponPosition;
+    public int Hp;
     public float speed;
     public float jumpPower;
     private bool canJump = false;
     private bool isMove = false;
     private bool canMove = true;
-    private Rigidbody2D rigid;
-    private SpriteRenderer spriter;
-    private Animator anim;
 
-    private CapsuleCollider2D cscd;
+    private bool equipWeapon = false;
+
 
     #region Unity_Function
     void Start()
@@ -88,7 +92,7 @@ public class Player : MonoBehaviour
             spriter.color = new Color(1, 1, 1, 0.4f);
 
             int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-            rigid.AddForce(new Vector2(dirc, 1f) * 5, ForceMode2D.Impulse);
+            rigid.AddForce(new Vector2(dirc, 1f) * 4, ForceMode2D.Impulse);
 
             canMove = false;
 
@@ -114,5 +118,17 @@ public class Player : MonoBehaviour
         anim.SetTrigger("isDie");
     }
 
+    private void WeaponColliderOnOff()
+    {
+        if (equipWeapon) WeaponCollider.SetActive ( !WeaponCollider.activeInHierarchy );
+    }
+
+    private void _Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            anim.SetTrigger("Attack");
+        }
+    }
     #endregion
 }

@@ -10,15 +10,4 @@ public class GameSceneMove : MonoBehaviour
         SceneManager.LoadScene("GameScene");
         Debug.Log("Game Scene Go");
     }
-    // Start is ca]lled before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

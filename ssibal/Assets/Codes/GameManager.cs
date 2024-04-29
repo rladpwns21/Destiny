@@ -16,15 +16,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
-        {
-        if(mainPlayer.Hp > 1)
-        {
-        other.attachedRigidbody.velocity = Vector2.zero;
-         other.transform.position = new Vector3(-24, 1f, 0);
-        }
-        _HpDown();
-        }
+        if(other.gameObject.tag == "Player") Debug.Log("111");
     }
     #endregion
 
@@ -40,8 +32,6 @@ public class GameManager : MonoBehaviour
         {
             mainPlayer.Hp --;
             mainPlayer._OnDie();
-
-            Debug.Log("YOU DIE");
         }
             
     }

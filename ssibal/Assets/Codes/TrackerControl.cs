@@ -19,6 +19,7 @@ public class TrackerControl : MonoBehaviour
     private bool isApear = false;
     private Color myColor;
 
+    #region Unity_Function
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +33,9 @@ public class TrackerControl : MonoBehaviour
         Trace();
     }
 
+    #endregion
+
+    #region Function
     private void Trace()
     {
         if (isTracing && traceobject != null)
@@ -44,8 +48,6 @@ public class TrackerControl : MonoBehaviour
             rb.velocity = new Vector2(direction.x * traceSpeed, rb.velocity.y);
 
             spr.flipX = direction.x > 0 ? false : true;
-
-            Debug.Log(direction.x * traceSpeed);
             Apear();
         }
     }
@@ -67,4 +69,5 @@ public class TrackerControl : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
+    #endregion
 }

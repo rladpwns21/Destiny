@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638476524286277359
+  platformSettingsDirtyTick: 638493794725218310
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 47
       width: 24
       height: 45
-    spriteID: 45c6079de22e3aa4a97f1e29d40a47fd
+    spriteID: 7ee19e48ba16d0248a971a073c8a3a83
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 57
       width: 31
       height: 43
-    spriteID: b71790f0cee6ff248bc7e2cdffbbf887
+    spriteID: 471acae2be5315048b2431851622c60d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       y: 4
       width: 35
       height: 45
-    spriteID: cad757bd89ec720418ca335d187b7416
+    spriteID: cba08edfabe1cc34f8d849aeab24e361
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -192,7 +192,7 @@ ScriptedImporter:
       y: 4
       width: 41
       height: 35
-    spriteID: 3cd6dbe00fe8b8c45a706fc2a0529877
+    spriteID: d1cee2a49bfe5654585fe1d8fd9d7677
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -212,7 +212,7 @@ ScriptedImporter:
       y: 47
       width: 41
       height: 28
-    spriteID: ce1b40e1b00a9d240abe2412a27e637d
+    spriteID: 93d9bb768ab14b74f9b31084a49c5379
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -237,7 +237,7 @@ ScriptedImporter:
         y: 0
         width: 24
         height: 45
-      spriteId: 45c6079de22e3aa4a97f1e29d40a47fd
+      spriteId: 7ee19e48ba16d0248a971a073c8a3a83
     - name: Attack_Frame_1
       frameIndex: 1
       cellRect:
@@ -245,7 +245,7 @@ ScriptedImporter:
         y: 0
         width: 31
         height: 43
-      spriteId: b71790f0cee6ff248bc7e2cdffbbf887
+      spriteId: 471acae2be5315048b2431851622c60d
     - name: Attack_Frame_2
       frameIndex: 2
       cellRect:
@@ -253,7 +253,7 @@ ScriptedImporter:
         y: 0
         width: 35
         height: 45
-      spriteId: cad757bd89ec720418ca335d187b7416
+      spriteId: cba08edfabe1cc34f8d849aeab24e361
     - name: Attack_Frame_3
       frameIndex: 3
       cellRect:
@@ -261,7 +261,7 @@ ScriptedImporter:
         y: 0
         width: 41
         height: 35
-      spriteId: 3cd6dbe00fe8b8c45a706fc2a0529877
+      spriteId: d1cee2a49bfe5654585fe1d8fd9d7677
     - name: Attack_Frame_4
       frameIndex: 4
       cellRect:
@@ -269,7 +269,7 @@ ScriptedImporter:
         y: 0
         width: 41
         height: 28
-      spriteId: ce1b40e1b00a9d240abe2412a27e637d
+      spriteId: 93d9bb768ab14b74f9b31084a49c5379
     linkedCells: []
     parentIndex: -1
   platformSettings:
