@@ -27,10 +27,8 @@ public class MoveCamera : MonoBehaviour
     
     void LateUpdate()
     {
-        //바로 밑 코드는 x, y, z 좌푯값만 구한 코드.
-        //transform.position = new Vector3(target.position.x, target.position.y, -10f);
-        transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);
-        transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
+        transform.position = new Vector3(target.position.x, target.position.y, -10f);
+        transform.position = new Vector3(transform.position.x, 1.5f, -10f);
 
         float lx = size.x * 0.5f - width;
         float clampX = Mathf.Clamp(transform.position.x, -lx + center.x, lx + center.x);

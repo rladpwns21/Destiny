@@ -10,20 +10,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject WeaponCollider;
-    public Vector2 inputVec;
     private Rigidbody2D rigid;
     private SpriteRenderer spriter;
     private CapsuleCollider2D cscd;
     private Animator anim;
-    public Transform[] WeaponPosition;
     public int Hp;
     public float speed;
     public float jumpPower;
     private bool canJump = false;
     private bool isMove = false;
     private bool canMove = true;
-
-    private bool equipWeapon = false;
 
 
     #region Unity_Function
@@ -115,15 +111,18 @@ public class Player : MonoBehaviour
 
     public void _OnDie()
     {
+        canMove = false;
+        canJump = false;
+        gameObject.layer = 13;
         anim.SetTrigger("isDie");
     }
 
     private void WeaponColliderOnOff()
     {
-        if (equipWeapon) WeaponCollider.SetActive ( !WeaponCollider.activeInHierarchy );
+        WeaponCollider.SetActive ( !WeaponCollider.activeInHierarchy );
     }
 
-    private void _Attack()
+    public void _Attack()
     {
         if (Input.GetKeyDown(KeyCode.J))
         {

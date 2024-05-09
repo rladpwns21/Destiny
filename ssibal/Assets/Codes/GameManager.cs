@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,7 +17,12 @@ public class GameManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player") Debug.Log("111");
+        if(other.gameObject.tag == "Player")
+        {
+            _HpDown();
+            other.attachedRigidbody.velocity = Vector2.zero;
+            other.transform.position = new Vector3(-16, -2.5f, -1);
+        }
     }
     #endregion
 
@@ -31,9 +37,18 @@ public class GameManager : MonoBehaviour
         else
         {
             mainPlayer.Hp --;
-            mainPlayer._OnDie();
+            StartCoroutine(End());
+            IEnumerator End()
+            {
+                mainPlayer._OnDie();
+                yield return new WaitForSeconds(2f);
+                Time.timeScale = 0;
+
+                yield break;
+            }
         }
             
     }
+
     #endregion
 }
